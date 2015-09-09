@@ -95,7 +95,7 @@ def check_config(config, is_local):
     if 'server_port' in config and type(config['server_port']) != list:
         config['server_port'] = int(config['server_port'])
 
-    if config.get('local_address', '') in [b'0.0.0.0']:
+    if config.get('local_address', '') in ['0.0.0.0']:
         logging.warn('warning: local set to listen on 0.0.0.0, it\'s not safe')
     if config.get('server', '') in ['127.0.0.1', 'localhost']:
         logging.warn('warning: server set to listen on %s:%s, are you sure?' %
